@@ -1,0 +1,54 @@
+
+{% extends 'dashboard/dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div >
+<div style="padding-left: 3rem;padding-top: 2rem;padding-bottom: 1em;background-color: #c9c1b1;width: 83rem;">
+
+    <h2>PAYMENTS</h2>
+    {% if payments %}
+    <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">User</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Payment ID</th>
+              <th scope="col">Status</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              {% for leave in payments %}
+            <tr style="background-color: #d9a3a3;">
+
+              <td>{{ leave.user.username}}</td>
+              <td>{{ leave.amount}}</td>
+              <td>{{ leave.payment_id }}</td>
+              {% if leave.paid %}
+              <td style="color:green;font-weight: bold">PAID</td>
+              {% else %}
+              <td style="color:red">NOT PAID</td>
+              {% endif %}
+              
+
+             
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+
+    </table>
+    {% else %}
+
+    <span>No Leaves can be found...</span>
+    {% endif %}
+
+</div>
+</div>
+
+    {% if msg %}{{msg}}{% endif %}
+
+{% endblock %}

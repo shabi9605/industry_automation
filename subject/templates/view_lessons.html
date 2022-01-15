@@ -1,0 +1,39 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block body %}
+<div style="background-color: burlywood;">
+    {% for i in lessons %}
+<div class="card text-center" style="width: 78rem;margin-left: 2em;margin-right: 2em;background-color: cadetblue;margin-top: 1em;margin-bottom: 1em;">
+    <div class="card-header">
+      Lesson Name: {{i.lesson_name}}
+    </div>
+    <div class="card-header">
+      Lesson Number: {{i.lesson_no}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Subject Name: {{i.subject.name}}</h5>
+      {% if i.video %}<h5>
+        VIDEO:</h5>
+      <a href="{{i.video.url}}" download style="color: crimson;">
+      <h5>GET VIDEO </h5>
+    </a>
+    {% endif %}
+    {% if i.ppt %}<h5>
+        PPT:</h5>
+      <a href="{{i.ppt.url}}" download style="color: crimson;">
+      <h5>GET PPT </h5>
+    </a>
+    {% endif %}
+    {% if i.notes %}
+    <h5>
+      NOTES:</h5><a href="{{i.notes.url}}" download style="color: crimson;">
+      <h5>GET NOTES </h5>
+    </a>
+    {% endif %}
+    </div>
+    
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

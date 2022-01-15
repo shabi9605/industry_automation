@@ -1,0 +1,23 @@
+
+{% extends 'dashboard/dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div >
+<div style="padding-left: 3rem;padding-top: 2rem;padding-bottom: 1em;background-color: #c9c1b1;width: 83rem;">
+
+    <h2>ADD LESSON</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form|crispy}}
+        
+        
+        <input type="submit" value="ADD" style="background-color: #3e36c3;color: white;margin-top: 1em;">
+
+    </form>
+</div>
+</div>
+
+    {% if msg %}{{msg}}{% endif %}
+
+{% endblock %}

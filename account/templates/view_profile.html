@@ -1,0 +1,47 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block body %}
+
+		<div class="main-agileits" style="margin-top: 1em;">
+		<div class="right-wthree">
+			{% if user.image %}
+				<img src="{{user.image.url}}" alt="image" />{% endif %}
+				<h2>{{user.user.username}}</h2>
+				
+			</div>
+			<div class="left-w3ls">
+			<ul class="address">
+													<li>
+														<ul class="address-text">
+															<li><b>PHONE </b></li>
+															<li>: {{user.phone}}</li>
+														</ul>
+													</li>
+													<li>
+														<ul class="address-text">
+															<li><b>ADDRESS </b></li>
+															<li>: {{user.address}}</li>
+														</ul>
+													</li>
+													<li>
+														<ul class="address-text">
+															<li><b>E-MAIL </b></li>
+															<li><a href="">:{{user.user.email}}</a></li>
+														</ul>
+													</li>
+													<li>
+														<ul class="address-text">
+															<li><b>COURSE </b></li>
+															<li><a href="">: {{user.course.course_name}}</a></li>
+														</ul>
+													</li>
+												</ul>
+				
+				
+						<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">		
+						<div class="agileits_modal_body">
+							<iframe src="https://player.vimeo.com/video/8483438?title=0&byline=0&portrait=0"></iframe>
+						</div>
+					</div>
+	<!-- //pop-up-box -->
+					{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div style="padding-top: 2rem;padding-left: 2rem;background-color:#efdfdc;padding-bottom: 2rem;color:#89043b;width: 83rem;">
+{% for i in my_complaints %}
+    <div class="card bg-success" style="margin-right: 2em;">
+        <div class="card-body">
+          <h4 class="card-title">{{i.user.username}}</h4>
+          <p class="card-text" style="font-weight: bold;font-size: 20px;">Complaint: {{i.complaint}}</p>
+          
+        </div>
+      </div>
+{% endfor %}
+
+ </div>
+ {% endblock %}   
